@@ -110,7 +110,7 @@ LIMIT 1;
 +----+---------------+---------------+
 
 '''
-#potential usecase but didn  not work
+#potential use-case but did not work
 SELECT
 MIN(year_of_birth) #AS oldest_director,
 name
