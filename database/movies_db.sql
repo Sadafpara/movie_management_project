@@ -285,7 +285,7 @@ SELECT * FROM directors_tbl
     JOIN movie_actors_tbl ON movie_actors_tbl.movie_id = movies_tbl.id 
     JOIN main_actors_tbl ON main_actors_tbl.id = movie_actors_tbl.main_actor_id  
 WHERE directors_tbl.name LIKE "James Cameron" 
-AND main_actors_tbl.sex LIKE "F"
+AND main_actors_tbl.sex LIKE "F";
 
 
 #How many directors did Leonardo DiCaprio worked with?
