@@ -298,3 +298,40 @@ SELECT Count(directors_tbl.name) FROM main_actors_tbl
 WHERE main_actors_tbl.name LIKE "Leonardo DiCaprio" ;
 
 
+#Who is the oldest director?
+SELECT * FROM directors_tbl 
+ORDER BY year_of_birth ASC
+LIMIT 1;
+
+'''
+SELECT
+MIN(year_of_birth) #AS oldest_director,
+name
+FROM directors_tbl
+#GROUP BY name;
+'''
+
+#What is the earliest movie of the oldest director?
+SELECT title, release_year, directors_tbl.name, directors_tbl.year_of_birth
+FROM movies_tbl
+    JOIN directors_tbl ON directors_tbl.id = movies_tbl.director_id
+WHERE ( SELECT id FROM directors_tbl 
+ORDER BY year_of_birth ASC
+LIMIT 1
+)
+ORDER BY release_year ASC
+LIMIT 1;
+
+
+
+#What is the latest movie of the youngest actor?
+SELECT title, release_year, main_actors_tbl.name, main_actors_tbl.year_of_birth
+FROM movies_tbl
+    JOIN movie_actors_tbl ON movies_tbl.id = movie_actors_tbl.movie_id 
+    JOIN main_actors_tbl ON  movie_actors_tbl.main_actor_id = main_actors_tbl.id
+WHERE ( SELECT id FROM main_actors_tbl 
+ORDER BY year_of_birth DESC
+LIMIT 1
+)
+ORDER BY release_year DESC
+LIMIT 1;
