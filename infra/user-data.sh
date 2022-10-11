@@ -25,3 +25,4 @@ sudo docker build -t movie-mgmt .
 # RUN MYSQL CONTAIER
 # DEPLOY OUR DATABASE INSIDE THE MYSQL CONTAINER
 # RUN MY CONTAINER - FLASK APP RUNNING
+docker run -d -p 80:80 --name=movie-mgmt  -v $PWD/movie_app:/app movie-mgmt

@@ -2,6 +2,9 @@ import json
 
 from flask import Flask, render_template
 from flask_mysqldb import MySQL
+from flask import request
+
+
 
 #Defining the rout path.
 app = Flask("MovieApp")
