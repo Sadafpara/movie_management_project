@@ -7,10 +7,13 @@ sudo yum install git -y
 
 # INSTALL DOCKER
 sudo amazon-linux-extras install docker -y
+
+
+# START DOCKER SERVICE
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 
-# START DOCKER SERVICE
+
 # CLONE MY MOVIE-MANAGEMENT-PROJECT REPO
 # BUILD MY DOCKER IMAGE
 # RUN MYSQL CONTAIER
