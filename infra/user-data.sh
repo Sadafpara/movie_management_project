@@ -15,7 +15,13 @@ sudo usermod -a -G docker ec2-user
 
 
 # CLONE MY MOVIE-MANAGEMENT-PROJECT REPO
+git clone --branch demo https://github.com/Sadafpara/movie_management_project.git
+
+
 # BUILD MY DOCKER IMAGE
+cd movie_management_project/app
+sudo docker build -t movie-mgmt . 
+
 # RUN MYSQL CONTAIER
 # DEPLOY OUR DATABASE INSIDE THE MYSQL CONTAINER
 # RUN MY CONTAINER - FLASK APP RUNNING
